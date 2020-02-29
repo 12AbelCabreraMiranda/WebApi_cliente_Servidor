@@ -39,12 +39,13 @@ namespace Mvc.Controllers
             if (emp.EmployeeID == 0)
             {
                 HttpResponseMessage response = GlobalVariables.WebApiClient.PostAsJsonAsync("Employee", emp).Result;
-
+                TempData["SuccessMessage"] = "Saved Succesfully";
             }
             else
             {
-                HttpResponseMessage response = GlobalVariables.WebApiClient.PutAsJsonAsync("Employee/"+emp.EmployeeID,
+                HttpResponseMessage response = GlobalVariables.WebApiClient.PutAsJsonAsync("Employee/" + emp.EmployeeID,
                     emp).Result;
+                TempData["SuccessMessage"] = "Update Succesfully";
             }
             return RedirectToAction("Index");            
         }

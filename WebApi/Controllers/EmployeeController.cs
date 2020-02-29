@@ -39,10 +39,10 @@ namespace WebApi.Controllers
         [ResponseType(typeof(void))]
         public IHttpActionResult PutEmployee(int id, Employee employee)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return BadRequest(ModelState);
+            //}
 
             if (id != employee.EmployeeID)
             {

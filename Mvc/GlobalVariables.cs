@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Mvc
 {
-    public class GlobalVariables
+    public static class GlobalVariables
     {
         public static HttpClient WebApiClient = new HttpClient();
         static GlobalVariables()
